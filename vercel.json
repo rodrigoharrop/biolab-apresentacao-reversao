@@ -1,0 +1,18 @@
+{
+  "name": "Plano de Reversão SEMTRI",
+  "version": 2,
+  "builds": [
+    {
+      "src": "apresentacao_reversao_v3_html.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/apresentacao_reversao_v3_html.html"
+    }
+  ],
+  "env": {},
+  "regions": ["sfo1"]
+}
