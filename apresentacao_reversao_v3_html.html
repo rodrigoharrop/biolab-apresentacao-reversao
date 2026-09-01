@@ -134,6 +134,95 @@
 
         .commitment-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 25px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #4caf50; }
         .commitment-box h3 { color: #2e7d32; }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { border-radius: 8px; }
+
+            .header { padding: 25px 15px; }
+            .header h1 { font-size: 22px; }
+            .header p { font-size: 12px; }
+
+            .slide { padding: 30px 20px; min-height: auto; }
+            .slide h2 { font-size: 24px; margin-bottom: 20px; }
+            .slide h3 { font-size: 16px; margin-top: 20px; }
+
+            .metric-box { padding: 15px; margin: 12px 0; }
+
+            .box-container { grid-template-columns: 1fr; gap: 15px; }
+            .box { padding: 15px; }
+            .box h4 { font-size: 13px; }
+            .box li { font-size: 12px; }
+
+            .cards-grid { grid-template-columns: 1fr; gap: 15px; }
+            .card-header { padding: 12px; font-size: 14px; }
+            .card-body { padding: 15px; }
+            .card-content.active { max-height: 1200px; }
+
+            table { font-size: 12px; }
+            th { padding: 10px 8px; }
+            td { padding: 10px 8px; }
+
+            .navigation { padding: 15px 20px; flex-direction: column; gap: 10px; }
+            .nav-btn { padding: 10px 15px; font-size: 13px; width: 100%; }
+            .slide-counter { margin-top: 10px; }
+
+            .chart-thumbnail { max-width: 100%; }
+            .timeline-item { margin: 15px 0; padding-left: 25px; }
+            .timeline-item:before { width: 12px; height: 12px; left: -6px; }
+
+            .btn-group-medicos { padding: 10px 15px; font-size: 13px; width: 100%; }
+            .medicos-list { padding: 15px; }
+            .medicos-list h4 { font-size: 14px; }
+            .medicos-list th { padding: 10px 8px; }
+            .medicos-list td { padding: 10px 8px; }
+
+            .highlight { padding: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 8px; }
+
+            .header { padding: 20px 12px; }
+            .header h1 { font-size: 18px; margin-bottom: 8px; }
+            .header p { font-size: 11px; }
+
+            .slide { padding: 20px 15px; }
+            .slide h2 { font-size: 20px; margin-bottom: 15px; padding-bottom: 10px; }
+            .slide h3 { font-size: 14px; margin-top: 15px; margin-bottom: 10px; }
+
+            .metric-box { padding: 12px; margin: 10px 0; font-size: 12px; }
+            .metric-box strong { display: block; margin-bottom: 8px; }
+
+            .box { padding: 12px; }
+            .box h4 { font-size: 12px; }
+            .box ul { margin-left: 16px; }
+            .box li { font-size: 11px; margin: 6px 0; }
+
+            .card-header { padding: 10px; font-size: 13px; }
+            .card-body { padding: 12px; font-size: 12px; }
+
+            table { font-size: 11px; }
+            th { padding: 8px 6px; }
+            td { padding: 8px 6px; }
+
+            .navigation { padding: 12px 15px; }
+            .nav-btn { padding: 8px 12px; font-size: 12px; }
+
+            .chart-thumbnail { max-width: 100%; padding: 10px; }
+            .chart-label { font-size: 10px; }
+
+            .timeline-item { margin: 12px 0; padding-left: 22px; }
+            .timeline-item:before { width: 10px; height: 10px; left: -5px; }
+
+            .btn-group-medicos { padding: 9px 12px; font-size: 12px; margin: 15px 0; }
+            .medicos-list { padding: 12px; margin: 10px 0 15px 0; }
+            .medicos-list h4 { font-size: 13px; margin-bottom: 10px; }
+            .medicos-list th { padding: 8px 6px; font-size: 11px; }
+            .medicos-list td { padding: 8px 6px; font-size: 11px; }
+
+            .highlight { padding: 12px; margin: 15px 0; }
+        }
     </style>
 </head>
 <body>
