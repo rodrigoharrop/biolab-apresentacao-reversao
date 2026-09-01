@@ -77,6 +77,61 @@
 
         .highlight { background: #fff9e6; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #ffc107; }
 
+        .btn-group-medicos {
+            background: #003366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-group-medicos:hover {
+            background: #004d99;
+            transform: translateY(-2px);
+        }
+
+        .medicos-list {
+            background: #f9fafb;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0 25px 0;
+            animation: slideDown 0.3s ease;
+        }
+        .medicos-list h4 {
+            color: #003366;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .medicos-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .medicos-list th {
+            background: #003366;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .medicos-list td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .medicos-list tr:hover {
+            background: #f0f4f8;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .commitment-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 25px; border-radius: 8px; margin: 25px 0; border-left: 4px solid #4caf50; }
         .commitment-box h3 { color: #2e7d32; }
     </style>
@@ -302,6 +357,24 @@
                 </table>
             </div>
 
+            <button class="btn-group-medicos" onclick="toggleMedicos('grupoA')">📋 Ver Médicos do Grupo A</button>
+            <div id="grupoA-medicos" class="medicos-list" style="display: none;">
+                <h4>Médicos - Grupo A</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Médico</th>
+                            <th>RX Atual</th>
+                            <th>Meta</th>
+                            <th>GAP</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px; color: #999;">Aguardando dados dos médicos...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
             <h3>GRUPO B: Médicos que Prescrevem o Concorrente (Alto Potencial)</h3>
             <div class="table-container">
                 <table>
@@ -348,6 +421,24 @@
                         <td>Manter constância e crescimento</td>
                     </tr>
                 </table>
+            </div>
+
+            <button class="btn-group-medicos" onclick="toggleMedicos('grupoB')">📋 Ver Médicos do Grupo B</button>
+            <div id="grupoB-medicos" class="medicos-list" style="display: none;">
+                <h4>Médicos - Grupo B</h4>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Médico</th>
+                            <th>RX Atual</th>
+                            <th>Meta</th>
+                            <th>GAP</th>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 20px; color: #999;">Aguardando dados dos médicos...</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -583,6 +674,15 @@
             const hint = card.querySelector('.click-hint');
             content.classList.toggle('active');
             hint.textContent = content.classList.contains('active') ? '↑ Clique para recolher' : '↓ Clique para expandir';
+        }
+
+        function toggleMedicos(grupo) {
+            const element = document.getElementById(grupo + '-medicos');
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
         }
 
         document.addEventListener('keydown', (e) => {
